@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Fas icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Single page</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        padding: 0;
+        /* overflow: hidden; */
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+      }
+      .container #social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 190px;
+        background-image: linear-gradient(120deg, #fccb90 0%, #f230e5 100%);
+        color: black;
+      }
+      .container #social #media {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+      .container #social #media a {
+        border-left: 2px solid rgb(254, 253, 253);
+        padding: 13px 13px;
+      }
+      .container #contact {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+      }
+      .container #btn button {
+        background-color: #ca6cc3;
+        margin-top: 8px;
+        padding: 8px 14px;
+        border: 2px solid white;
+        border-radius: 19px;
+      }
+      .container #btn button:hover {
+        color: #fff;
+        background-color: rgb(1, 58, 123);
+      }
+      /* Navbar */
+      .container #navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 190px;
+        background-color: #fff;
+        color: black;
+      }
+      .container #navbar #logo img {
+        width: 170px;
+        height: 60px;
+      }
+      .container #navbar #links ul {
+        display: flex;
+        float: row;
+        gap: 30px;
+        margin-top: 20px;
+        list-style: none;
+      }
+      .container #navbar #links ul li a {
+        font-size: 1.2rem;
+        text-decoration: none;
+      }
+      .container #search_btn {
+        background-color: rgb(2, 2, 2);
+        padding: 10px 10px;
+      }
+      .container #search_btn:hover {
+        background-color: rgb(5, 56, 145);
+        color: #000;
+      }
+      /* Showcase */
+      .container #Showcase {
+        height: 60vh;
+        width: 97%;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        text-align: left;
+        padding: 20px;
+        background-image: url("./Bamboo.jpg");
+        justify-content: center;
+        color: white;
+        align-items: flex-start;
+      }
+
+      .container #Showcase #header {
+        margin-bottom: 20px;
+        padding-left: 25px;
+        border-left: 6px solid rgb(206, 94, 184);
+        margin-left: 11rem;
+      }
+
+      .container #Showcase h1 {
+        font-size: 2rem;
+      }
+
+      .container #Showcase p {
+        font-size: 1.2rem;
+        margin: 15px 0;
+      }
+      .container #Showcase_btn {
+        margin-left: 13rem;
+      }
+      .container #Showcase_btn button {
+        padding: 8px 25px;
+        background-color: none;
+        border: 1px solid white;
+        border-radius: 19px;
+        color: rgb(245, 244, 244);
+        font-weight: bold;
+        background: none;
+      }
+      .container #Showcase_btn button:hover {
+        background-color: rgb(2, 64, 136);
+      }
+      .container #Showcase_btn button.btn_special {
+        background-image: linear-gradient(120deg, #fccb90 0%, #f230e5 100%);
+        padding: 10px 29px;
+      }
+      /* news section */
+      #news {
+        display: flex;
+        flex-direction: row;
+        background-image: linear-gradient(120deg, #fccb90 0%, #f230e5 100%);
+        gap: 10px;
+      }
+      .box_1,
+      .box_2,
+      .box_3 {
+        flex: 1;
+        margin: 30px;
+      }
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 50px;
+        padding-left: 80px;
+      }
+      .icon i {
+        font-size: 20px;
+        margin-right: 1px;
+        border: 1px solid #000;
+        border-radius: 50%;
+        padding: 20px;
+      }
+      #news h1 {
+        font-size: 1rem;
+        margin: 0;
+        margin-left: 20px;
+      }
+      #news p {
+        font-size: 1rem;
+        margin-left: 40px;
+        justify-content: center;
+      }
+      /*  About section */
+      #about {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px;
+      }
+
+      #about_us {
+        flex: 1;
+        padding: 20px;
+        /* background-color: #f0f0f0; */
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+
+      #about_us h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      #about_us h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      #about_us p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      #about_us button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-image: linear-gradient(120deg, #fccb90 0%, #f230e5 100%);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #about_picture {
+        flex: 1;
+      }
+
+      #about_picture img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      /* Services CSS */
+      #services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      #main h1 {
+        grid-column: span 2;
+        font-size: 3rem;
+        margin: 20px 70px;
+      }
+
+      #services .service {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        gap: 10px;
+        padding: 0px;
+      }
+
+      .service img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .service .icon {
+        margin-left: 30px;
+        text-align: center;
+      }
+      .service .icon i {
+        background-image: linear-gradient(120deg, #fccb90 0%, #f230e5 100%);
+        position: absolute;
+        top: 1;
+        left: 1;
+      }
+      .service .icon h4 {
+        padding-left: 60px;
+        padding-right: 12px;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        margin-left: 7rem;
+        background-color: rgb(248, 244, 244);
+        border: 2px solid rgb(230, 225, 225);
+        border-radius: 30px 30px 30px 30px;
+      }
+      .service .heading {
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="social">
+        <div id="media">
+          <a href="#">
+            <i
+              class="fa-brands fa-square-twitter fa-beat fa-lg"
+              style="color: #f4f7fa"
+            ></i>
+          </a>
+          <a
+            ><i
+              class="fa-brands fa-square-instagram fa-beat fa-lg"
+              style="color: #f9fafa"
+            ></i
+          ></a>
+          <a
+            ><i
+              class="fa-brands fa-square-facebook fa-beat fa-lg"
+              style="color: #f9fafb"
+            ></i
+          ></a>
+          <a
+            ><i
+              class="fa-brands fa-square-youtube fa-beat fa-lg"
+              style="color: #fcfcfd"
+            ></i
+          ></a>
+          <a
+            ><i
+              class="fa-brands fa-square-github fa-beat fa-lg"
+              style="color: #fcfcfd"
+            ></i
+          ></a>
+          <a
+            ><i
+              class="fa-brands fa-linkedin fa-beat fa-lg"
+              style="color: #f9fafa"
+            ></i
+          ></a>
+          <a></a>
+        </div>
+        <div id="contact">
+          <i class="fa-solid fa-phone fa-sm" style="color: #fcfcfd"></i>
+          <p>+92 3154372572</p>
+          <i
+            class="fa-solid fa-square-envelope fa-sm"
+            style="color: #fcfcfd"
+          ></i>
+          <p>Yahya@gmail.com</p>
+        </div>
+        <div id="btn">
+          <button>Started now</button>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <div class="nav">
+        <div id="navbar">
+          <div id="logo">
+            <img src="./logo.PNG" alt="" />
+          </div>
+          <div id="links">
+            <ul>
+              <li>
+                <a href="#" class="active">Home</a>
+              </li>
+              <li>
+                <a href="#" class="active">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="active">Page</a>
+              </li>
+              <li>
+                <a href="#" class="active">Services</a>
+              </li>
+              <li>
+                <a href="#" class="active">Testimonials</a>
+              </li>
+              <li>
+                <a href="#" class="active">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="active">Buy Now</a>
+              </li>
+            </ul>
+          </div>
+          <div id="search_btn">
+            <p>
+              <i
+                class="fa-solid fa-magnifying-glass fa-xs"
+                style="color: #f5f0f0"
+              ></i>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Showcase -->
+      <div id="Showcase">
+        <div id="header">
+          <h1>WE ARE CREATIVE</h1>
+          <h1>CREATE DIGITAL AGENCVTIVE DIGITAL AGENCY</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
+            consectetur? Vel, laboriosam? <br />
+            consectetur? Vel, debitis temporibus? Illum, laboriosam?
+          </p>
+        </div>
+        <div id="Showcase_btn">
+          <button class="btn_special">
+            Read More &nbsp; &nbsp;
+            <i
+              class="fa-solid fa-arrow-right fa-beat fa-lg"
+              style="color: #f8f9fc"
+            ></i>
+          </button>
+          <button>
+            <i
+              class="fa-regular fa-heart fa-beat fa-lg"
+              style="color: #f5f7f9"
+            ></i>
+            &nbsp; &nbsp; Like
+          </button>
+          <button>
+            <i
+              class="fa-brands fa-whatsapp fa-beat-fade fa-lg"
+              style="color: #ffffff"
+            ></i
+            >&nbsp; &nbsp; Join
+          </button>
+        </div>
+      </div>
+      <!-- News section -->
+      <section id="news">
+        <div class="box_1">
+          <div class="icon">
+            <i class="fa-solid fa-rocket"></i>
+            <h1>LUNCH BUSINESS</h1>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
+            adipisci!
+          </p>
+        </div>
+        <div class="box_2">
+          <div class="icon">
+            <i class="fa-solid fa-headphones-simple"></i>
+            <h1>ONLINE SUPPORT TEAM</h1>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,
+            nobis.
+          </p>
+        </div>
+        <div class="box_3">
+          <div class="icon">
+            <i class="fa-regular fa-clock"></i>
+            <h1>TIME MANAGEMENT</h1>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, iusto!
+          </p>
+        </div>
+      </section>
+      <!-- About section -->
+      <div id="about">
+        <div id="about_us">
+          <h1>ABOUT US</h1>
+          <h2>
+            15 Year's We're acheving better response result from <br />
+            Clients
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            tincidunt, nunc at convallis vulputate, augue metus malesuada nunc,
+            id tristique metus neque sed nulla. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Deserunt, dolorum ratione alias ad
+            fuga optio animi sit aut nulla quis atque magnam inventore? Fugiat
+            nihil molestias tempora illum dolorum voluptatem! Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Mollitia minima ipsa eius
+            quae, ullam fugiat eveniet animi dolorum error quo?
+          </p>
+          <button>Read More!</button>
+        </div>
+        <div id="about_picture">
+          <img src="./pics.png" alt="About Us Picture" />
+        </div>
+      </div>
+      <!-- Services Region -->
+      <section id="main">
+        <h1>Our Services</h1>
+        <div id="services">
+          <div class="service">
+            <img src="./11.png" alt="Service 1" />
+            <div class="icon">
+              <i class="fa-solid fa-bullhorn" style="color: #fdfbfb"></i>
+              <h4>Web Development</h4>
+            </div>
+          </div>
+          <div class="service">
+            <img src="./22.png" alt="Service 2" />
+            <div class="icon">
+              <i class="fa-brands fa-windows" style="color: #feffff"></i>
+              <h4>Web Development</h4>
+            </div>
+          </div>
+          <div class="service">
+            <img src="./33.png" alt="Service 3" />
+            <div class="icon">
+              <i class="fa-solid fa-sack-dollar" style="color: #fdfdfd"></i>
+              <h4>Web Development</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

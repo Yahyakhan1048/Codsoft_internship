@@ -1,0 +1,43 @@
+#news {
+  display: flex;
+  background-image: linear-gradient(120deg, #fccb90 0%, #f230e5 100%);
+  /* justify-content: space-between;  */
+}
+.box_1,
+.box_2,
+.box_3 {
+  flex: 1; /* Equal width for each box */
+  padding: 50px; /* Add padding for spacing inside the box */
+  /* text-align: center; */
+}
+
+/* Styling for icons */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Set a fixed width for the icon containers */
+  height: 50px; /* Set a fixed height for the icon containers */
+  padding-left: 80px;
+}
+
+/* Additional styling for icon elements */
+.icon i {
+  font-size: 20px; /* Adjust the icon size as needed */
+  margin-right: 10px; /* Add spacing between the icon and heading */
+  border: 1px solid #000; /* Add a 1px border around the icons */
+  border-radius: 50%; /* Make the border circular (50% border-radius) */
+  padding: 20px;
+}
+
+/* Styling for headings */
+h1 {
+  font-size: 1rem; /* Adjust the heading font size as needed */
+  margin: 0; /* Remove default margin for headings */
+}
+
+/* Styling for news titles */
+p {
+  font-size: 1rem; /* Adjust the title font size as needed */
+  margin-left: 40px;
+}
